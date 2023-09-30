@@ -23,7 +23,7 @@ import copy
 # - [ ] add a score of size when finding the title. estimate the size by doing a ratio of text length / bounding box size.
 # - [ ] 
 
-DEBUG = True
+DEBUG = False
 INFO = True
 
 def dbg(*args, **kwargs):
@@ -63,6 +63,22 @@ test_lines = [([[31, 10], [742, 10], [742, 84], [31, 84]],
  ([[248, 164], [406, 164], [406, 194], [248, 194]],
   '8.30 PM EST',
   0.9848330215778436)]
+
+# @returns a list of [x,y], text and model confident level,
+def extract_text_array(image):
+    # todo add guid for matching req and res
+    start_time = time.time()
+
+    # Change to accept image as bytes bc it will come over the network
+    reader = easyocr.Reader(['en']) 
+    result = reader.readtext(image)
+
+    end_time = time.time()
+    runtime = end_time - start_time
+
+    print(f"took:  {runtime:.6f}")
+
+    return result
 
 # @returns a list of [x,y], text and model confident level,
 def extract_text(image_name):
@@ -248,18 +264,31 @@ def parse_file_names():
     filename_args = (sys.argv[1:])
     return filename_args
 
-files = parse_file_names()
+# REFACTOR: into main func
+# files = parse_file_names()
 
-for file in files:
-    # Record the start time
-    # text_lines = extract_text('games_night.png')
-    ocr = extract_text(file)
+# for file in files:
+#     # Record the start time
+#     # text_lines = extract_text('games_night.png')
+#     ocr = extract_text(file)
+#     event = construct_event(ocr)
+
+#     sep()
+#     info('Processing: ' + file)
+#     info(event)
+#     sep()
+
+def process_image_array(image):
+    ocr = extract_text_array(image)
     event = construct_event(ocr)
 
     sep()
-    info('Processing: ' + file)
+    info('Processing an image array.')
     info(event)
     sep()
+
+    return event
+
 
 
 
