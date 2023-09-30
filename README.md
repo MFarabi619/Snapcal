@@ -1,9 +1,10 @@
 # Snapcal: University Event Tracking Simplified
 
+University life offers a plethora of opportunities for students to build networks, discover new events, explore varied avenues, and enrich their knowledge beyond the classroom. Yet, an underlying challenge persists. Clubs and societies often grapple with efficiently consolidating their events onto a singular, accessible calendar for students. This inefficiency stems from a multitude of reasons — from architectural missteps, technical inadequacies, to inconsistent maintenance. As a consequence, students, already juggling demanding schedules, find themselves diving deep into myriad Instagram pages, sifting through numerous email lists, and laboriously entering event details into their personal calendars. This fragmented approach is not just tedious but also riddled with potential errors. What if there was a simpler and easier way to put events on your calendar?
+
 ## Table of Contents
 
-- [Project Overview](#project-overview)
-- [Objective](#objective)
+- [Project Overview & Objective](#project-overview-&-objective)
 - [Scope](#scope)
 - [Technologies Used](#technologies-used)
 - [Methodology](#methodology)
@@ -12,8 +13,6 @@
 - [Team](#team)
 
 ## Project Overview & Objective
-
-University life offers a plethora of opportunities for students to build networks, discover new events, explore varied avenues, and enrich their knowledge beyond the classroom. Yet, an underlying challenge persists. Clubs and societies often grapple with efficiently consolidating their events onto a singular, accessible calendar for students. This inefficiency stems from a multitude of reasons — from architectural missteps, technical inadequacies, to inconsistent maintenance. As a consequence, students, already juggling demanding schedules, find themselves diving deep into myriad Instagram pages, sifting through numerous email lists, and laboriously entering event details into their personal calendars. This fragmented approach is not just tedious but also riddled with potential errors.
 
 Snapcal aims to revolutionize this fragmented landscape. Imagine a scenario where, upon encountering an intriguing event poster or spotting an engaging Instagram advertisement, a student could simply capture the moment via a photo or screenshot. This image, when uploaded to Snap Schedule, undergoes data extraction, with all essential event details seamlessly integrated into the student's Google Calendar. The overarching objective is to craft a user-centric platform that not only alleviates the manual burdens on students but also empowers clubs and societies with a reliable tool to enhance event visibility and participation.
 
