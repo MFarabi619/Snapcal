@@ -1,7 +1,51 @@
-<div class="container h-full mx-auto flex justify-center items-center">
+<script>
+	import { FileDropzone } from '@skeletonlabs/skeleton';
+</script>
+
+<div class="container h-full mx-auto flex flex-col justify-center items-center p-10 md:p-20">
+	<FileDropzone name="files" class="mb-4">
+		<svelte:fragment slot="lead">
+				<div class="flex justify-center">
+				<svg xmlns="http://www.w3.org/2000/svg" width="100" height="100" viewBox="0 0 384 512"
+					><path
+						fill="currentColor"
+						d="M64 0C28.7 0 0 28.7 0 64v384c0 35.3 28.7 64 64 64h256c35.3 0 64-28.7 64-64V160H256c-17.7 0-32-14.3-32-32V0H64zm192 0v128h128L256 0zm-40 408c0 13.3-10.7 24-24 24s-24-10.7-24-24V305.9l-31 31c-9.4 9.4-24.6 9.4-33.9 0s-9.4-24.6 0-33.9l72-72c9.4-9.4 24.6-9.4 33.9 0l72 72c9.4 9.4 9.4 24.6 0 33.9s-24.6 9.4-33.9 0l-31-31V408z"
+					/></svg
+				>
+			</div>
+			</svelte:fragment>
+		<svelte:fragment slot="message" />
+		<svelte:fragment slot="meta">Only PNG and JPG are allowed.</svelte:fragment>
+	</FileDropzone>
+
+	<div class="flex flex-col justify-center items-center w-full">
+		<button type="button" class="btn variant-filled">Submit</button>
+	</div>
+
+	<form>
+		<label class="label">
+			<span>Event Name</span>
+			<input class="input" type="text" placeholder="Input text here" />
+		</label>
+		<label class="label">
+			<span>Date & Time</span>
+			<input class="input" type="text" placeholder="Input text here" />
+		</label>
+		<label class="label">
+			<span>Location</span>
+			<input class="input" type="text" placeholder="Input text here" />
+		</label>
+		<label class="label">
+			<span>Description</span>
+			<input class="input" type="text" placeholder="Input text here" />
+		</label>
+	</form>
+	
+	</div>
+
+<!-- <div class="container h-full mx-auto flex justify-center items-center">
 	<div class="space-y-10 text-center flex flex-col items-center">
 		<h2 class="h2">Welcome to Skeleton.</h2>
-		<!-- Animated Logo -->
 		<figure>
 			<section class="img-bg" />
 			<svg
@@ -15,7 +59,6 @@
 				/>
 			</svg>
 		</figure>
-		<!-- / -->
 		<div class="flex justify-center space-x-2">
 			<a
 				class="btn variant-filled"
@@ -32,9 +75,9 @@
 			<p><code class="code">/src/routes/+page.svelte</code></p>
 		</div>
 	</div>
-</div>
+</div> -->
 
-<style lang="postcss">
+<!-- <style lang="postcss">
 	figure {
 		@apply flex relative flex-col;
 	}
@@ -66,4 +109,4 @@
 			transform: scale(1.5);
 		}
 	}
-</style>
+</style> -->
