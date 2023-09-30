@@ -11,7 +11,8 @@ import copy
 # - 
 
 # Enhancements:
-# - clean up text spoacing, extra commans etc.
+# - [ ] remove extra spacing in text
+# - [ ] normalize the text capitilsation 
 
 # TODO:
 # - we now have a function that can process and image and return the text with bounding boxes.
@@ -19,6 +20,8 @@ import copy
 # only focus on events with starting and ending time.
 
 # - [ ] parse date time into obj from string.
+# - [ ] add a score of size when finding the title. estimate the size by doing a ratio of text length / bounding box size.
+# - [ ] 
 
 DEBUG = True
 INFO = True
@@ -36,6 +39,17 @@ def sep():
     print('#' * 80)
     print('#' * 80)
     print(' ' * 80)
+
+# Utilities
+
+def compute_area(bounding_box):
+    width = bounding_box[1][0] - bounding_box[0][0]
+    height = bounding_box[2][1] - bounding_box[1][1]
+
+    # Calculate the area
+    area = width * height
+
+    return area
 
 test_lines = [([[31, 10], [742, 10], [742, 84], [31, 84]],
   'Games Night @ The Loft',
@@ -109,12 +123,15 @@ def extract_date_and_time(text_lines):
         'consumed_indices' : consumed_indices
     }
 
+
+# We calcuate a score of the area covered by the text compared to length
+# We assume a larger text print with less length is the title.
 def extract_title(text_lines):
-    # For now, assume the longer text is the description
 
     # TODO: add heuristics so we can score properties such as how large the text is 
     # if the text is earlier in the lsit than later etc.
     just_text = []
+    size_scores = []
 
     dbg('text_lines')
     dbg(text_lines)
@@ -126,15 +143,32 @@ def extract_title(text_lines):
         dbg('text: ' + text)
         just_text.append(text)
 
+        bb = line[0]
+        bb_area = compute_area(bb)
+        text_length = len(text)
+        size_score = bb_area / text_length
+
+        size_scores.append(size_score)
+        dbg('size_score')
+        dbg(size_score)
+
     
-    dbg(just_text)
-    min_value, min_index = min((value, index) for index, value in enumerate(just_text))
-    title = min_value
+    dbg("size scores")
+    dbg(size_scores)
+    
+    # Find the maximum value
+    max_value = max(size_scores)
+
+    # Find the index of the maximum value
+    max_index = size_scores.index(max_value)
+
+    
+    title = just_text[max_index]
 
     dbg('title chosen')
     dbg(title)
 
-    consumed_indices = [ min_index ]
+    consumed_indices = [ max_index ]
 
     dbg(consumed_indices)
 
