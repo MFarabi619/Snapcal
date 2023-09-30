@@ -25,19 +25,19 @@
 	<form>
 		<label class="label">
 			<span>Event Name</span>
-			<input class="input" type="text" placeholder="Input text here" />
+			<input class="input" type="text" placeholder="Title of the Event" />
 		</label>
 		<label class="label">
 			<span>Date & Time</span>
-			<input class="input" type="text" placeholder="Input text here" />
+			<input class="input" type="text" placeholder="Date and Time of the Event" />
 		</label>
 		<label class="label">
 			<span>Location</span>
-			<input class="input" type="text" placeholder="Input text here" />
+			<input class="input" type="text" placeholder="Location of the Event" />
 		</label>
 		<label class="label">
 			<span>Description</span>
-			<input class="input" type="text" placeholder="Input text here" />
+			<input class="input" type="text" placeholder="Description of the Event" />
 		</label>
 	</form>
 	<div class="flex flex-col justify-center items-center w-full mt-6">
