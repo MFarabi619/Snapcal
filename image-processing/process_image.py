@@ -1,25 +1,41 @@
 import easyocr
 import os
+import sys
 import time
 from pprint import pprint
 import re
 import copy
+
+# Notes:
+# - ciena image has a bit of a fancy font, resulting in spelling errors eg October -> Ocbober
+# - 
+
+# Enhancements:
+# - clean up text spoacing, extra commans etc.
 
 # TODO:
 # - we now have a function that can process and image and return the text with bounding boxes.
 # start with event_name and date and time
 # only focus on events with starting and ending time.
 
-# - [ ] parse date time.
+# - [ ] parse date time into obj from string.
 
 DEBUG = True
+INFO = True
 
 def dbg(*args, **kwargs):
     if DEBUG:
         pprint(*args, **kwargs)
 
+def info(*args, **kwargs):
+    if INFO:
+        pprint(*args, **kwargs)
 
-print(os.getcwd())
+def sep():
+    print(' ' * 80)
+    print('#' * 80)
+    print('#' * 80)
+    print(' ' * 80)
 
 test_lines = [([[31, 10], [742, 10], [742, 84], [31, 84]],
   'Games Night @ The Loft',
@@ -92,28 +108,124 @@ def extract_date_and_time(text_lines):
         # parts such as heading and description.
         'consumed_indices' : consumed_indices
     }
+
+def extract_title(text_lines):
+    # For now, assume the longer text is the description
+
+    # TODO: add heuristics so we can score properties such as how large the text is 
+    # if the text is earlier in the lsit than later etc.
+    just_text = []
+
+    dbg('text_lines')
+    dbg(text_lines)
+
+    for i in range(len(text_lines)):
+        line = text_lines[i]
+        text = line[1]
+
+        dbg('text: ' + text)
+        just_text.append(text)
+
+    
+    dbg(just_text)
+    min_value, min_index = min((value, index) for index, value in enumerate(just_text))
+    title = min_value
+
+    dbg('title chosen')
+    dbg(title)
+
+    consumed_indices = [ min_index ]
+
+    dbg(consumed_indices)
+
+    return { 
+        'title': title,
+        'consumed_indices': consumed_indices
+    }
+
+# Assume by now that all that is left is the description.
+# join and return as a block of text.
+def extract_description(text_lines):
+    just_text = []
+
+
+    for i in range(len(text_lines)):
+       line = text_lines[i]
+       text = line[1]
+
+       dbg('text: ' + text)
+       just_text.append(text)
+
+
+    all_text = ' '.join(just_text)
+
+    return {'description': all_text}
+
+
     
 def construct_event(text_lines):
-    pprint(text_lines)
+    dbg('text lines')
+    dbg(text_lines)
 
     results = extract_date_and_time(text_lines)
-    pprint (results)
+    date_and_time = results['date_time_text']
+    dbg('date time extract results')
+    dbg (results)
 
     # remove consumed lines
     new_list = []
 
+    dbg(text_lines)
+
     for i in range(len(text_lines)):
         if not (i in results['consumed_indices']):
-            new_list += text_lines[i]
+            new_list.append(text_lines[i])
             
     dbg("filtered list: ")
     dbg(new_list)
 
+    results = extract_title(new_list)
+    title = results['title']
 
-# Record the start time
-# text_lines = extract_text('games_night.png')
-event = construct_event(test_lines)
+    dbg('title extract results')
+    dbg(results)
 
+    # remove consumed lines
+    new_list_2 = []
+
+    dbg(new_list)
+
+    for i in range(len(new_list)):
+        if not (i in results['consumed_indices']):
+            new_list_2.append(new_list[i])
+            
+    dbg("filtered list after title and date time: ")
+    dbg(new_list_2)
+
+    results = extract_description(new_list_2)
+    description = results['description']
+
+    return {'title': title,
+            'description': description,
+            'date_and_time': date_and_time}
+
+
+def parse_file_names():
+    filename_args = (sys.argv[1:])
+    return filename_args
+
+files = parse_file_names()
+
+for file in files:
+    # Record the start time
+    # text_lines = extract_text('games_night.png')
+    ocr = extract_text(file)
+    event = construct_event(ocr)
+
+    sep()
+    info('Processing: ' + file)
+    info(event)
+    sep()
 
 
 
