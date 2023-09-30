@@ -2,7 +2,7 @@
 	import { FileDropzone } from '@skeletonlabs/skeleton';
 </script>
 
-<div class="container h-full mx-auto flex flex-col justify-center items-center p-10 md:p-20">
+<div class="container h-full mx-auto flex flex-col justify-center items-center p-10 md:p-20 max-w-2xl">
 	<FileDropzone name="files" class="mb-4">
 		<svelte:fragment slot="lead">
 				<div class="flex justify-center">
@@ -40,7 +40,9 @@
 			<input class="input" type="text" placeholder="Input text here" />
 		</label>
 	</form>
-	
+	<div class="flex flex-col justify-center items-center w-full mt-6">
+		<button type="button" class="btn variant-filled">Add to Google Calendar</button>
+	</div>
 	</div>
 
 <!-- <div class="container h-full mx-auto flex justify-center items-center">
