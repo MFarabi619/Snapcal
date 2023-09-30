@@ -14,7 +14,8 @@
 		<!-- App Bar -->
 		<AppBar>
 			<svelte:fragment slot="lead">
-				<strong class="text-xl uppercase">Skeleton</strong>
+				
+					<img class="w-16 h-16 rounded-full object-cover object-center" src="images/snapcal_logo.svg" alt="Snapcal Logo">
 			</svelte:fragment>
 			<svelte:fragment slot="trail">
 				<a
@@ -23,7 +24,7 @@
 					target="_blank"
 					rel="noreferrer"
 				>
-					Discord
+					Home
 				</a>
 				<a
 					class="btn btn-sm variant-ghost-surface"
@@ -31,7 +32,7 @@
 					target="_blank"
 					rel="noreferrer"
 				>
-					Twitter
+					Upload
 				</a>
 				<a
 					class="btn btn-sm variant-ghost-surface"
@@ -39,7 +40,15 @@
 					target="_blank"
 					rel="noreferrer"
 				>
-					GitHub
+				Settings
+				</a>
+				<a
+					class="btn btn-sm variant-ghost-surface"
+					href="https://github.com/skeletonlabs/skeleton"
+					target="_blank"
+					rel="noreferrer"
+				>
+				Help
 				</a>
 			</svelte:fragment>
 		</AppBar>
