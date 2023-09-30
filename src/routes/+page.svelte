@@ -1,15 +1,20 @@
-<script>
+<script lang="ts">
 	import { FileDropzone } from '@skeletonlabs/skeleton';
+	let image: FileList;
+
+	function onChangeHandler(e: Event): void {
+	console.log('file data:', e);
+}
 </script>
 
 <div class="container h-full mx-auto flex flex-col justify-center items-center p-10 md:p-20 max-w-2xl">
-	<FileDropzone name="files" class="mb-4">
+	<FileDropzone bind:image={image} on:change={onChangeHandler} name="files" class="mb-4">
 		<svelte:fragment slot="lead">
 				<div class="flex justify-center">
 				<svg xmlns="http://www.w3.org/2000/svg" width="100" height="100" viewBox="0 0 384 512"
 					><path
 						fill="currentColor"
-						d="M64 0C28.7 0 0 28.7 0 64v384c0 35.3 28.7 64 64 64h256c35.3 0 64-28.7 64-64V160H256c-17.7 0-32-14.3-32-32V0H64zm192 0v128h128L256 0zm-40 408c0 13.3-10.7 24-24 24s-24-10.7-24-24V305.9l-31 31c-9.4 9.4-24.6 9.4-33.9 0s-9.4-24.6 0-33.9l72-72c9.4-9.4 24.6-9.4 33.9 0l72 72c9.4 9.4 9.4 24.6 0 33.9s-24.6 9.4-33.9 0l-31-31V408z"
+						d="M64 0C28.7 0 0 28.7 0 64v384c0 35.3 28.7 64 64 64h256c35.3 0 64-28.7 64-64V160H256c-17.7 0-32-14.3-32-32V0H64zm192 0v128h128L256 0zm-40 408c0 13.3-10.7 24-24 24s-24-10.7-24-24V305.9l-1c-9.4 9.4-24.6 9.4-33.9 0s-9.4-24.6 0-33.9l72-72c9.4-9.4 24.6-9.4 33.9 0l72 72c9.4 9.4 9.4 24.6 0 33.9s-24.6 9.4-33.9 0l-31-31V408z"
 					/></svg
 				>
 			</div>

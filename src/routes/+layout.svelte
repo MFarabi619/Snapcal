@@ -20,7 +20,7 @@
 			<svelte:fragment slot="trail">
 				<a
 					class="btn btn-sm variant-ghost-surface hover:scale-110 hover:bg-orange-500 hover:text-amber-300"
-					href="https://discord.gg/EXqV7W8MtY"
+					href="/"
 					target="_blank"
 					rel="noreferrer"
 				>
@@ -28,7 +28,7 @@
 				</a>
 				<a
 					class="btn btn-sm variant-ghost-surface hover:scale-110 hover:bg-orange-500 hover:text-amber-300"
-					href="https://twitter.com/SkeletonUI"
+					href="/"
 					target="_blank"
 					rel="noreferrer"
 				>
@@ -36,7 +36,7 @@
 				</a>
 				<a
 					class="btn btn-sm variant-ghost-surface hover:scale-110 hover:bg-orange-500 hover:text-amber-300"
-					href="https://github.com/skeletonlabs/skeleton"
+					href="/"
 					target="_blank"
 					rel="noreferrer"
 				>
