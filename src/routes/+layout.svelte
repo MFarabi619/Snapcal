@@ -14,32 +14,41 @@
 		<!-- App Bar -->
 		<AppBar>
 			<svelte:fragment slot="lead">
-				<strong class="text-xl uppercase">Skeleton</strong>
+				
+					<img class="w-16 h-16 rounded-full object-cover object-center" src="images/snapcal_logo.svg" alt="Snapcal Logo">
 			</svelte:fragment>
 			<svelte:fragment slot="trail">
 				<a
-					class="btn btn-sm variant-ghost-surface"
-					href="https://discord.gg/EXqV7W8MtY"
+					class="btn btn-sm variant-ghost-surface hover:scale-110 hover:bg-orange-500 hover:text-amber-300"
+					href="/"
 					target="_blank"
 					rel="noreferrer"
 				>
-					Discord
+					Home
 				</a>
 				<a
-					class="btn btn-sm variant-ghost-surface"
-					href="https://twitter.com/SkeletonUI"
+					class="btn btn-sm variant-ghost-surface hover:scale-110 hover:bg-orange-500 hover:text-amber-300"
+					href="/"
 					target="_blank"
 					rel="noreferrer"
 				>
-					Twitter
+					Upload
 				</a>
 				<a
-					class="btn btn-sm variant-ghost-surface"
+					class="btn btn-sm variant-ghost-surface hover:scale-110 hover:bg-orange-500 hover:text-amber-300"
+					href="/"
+					target="_blank"
+					rel="noreferrer"
+				>
+				Settings
+				</a>
+				<a
+					class="btn btn-sm variant-ghost-surface hover:scale-110 hover:bg-orange-500 hover:text-amber-300"
 					href="https://github.com/skeletonlabs/skeleton"
 					target="_blank"
 					rel="noreferrer"
 				>
-					GitHub
+				Help
 				</a>
 			</svelte:fragment>
 		</AppBar>
