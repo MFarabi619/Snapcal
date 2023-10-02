@@ -1,6 +1,6 @@
-# Snapcal: University Event Tracking Simplified
+# Snapcal: Event Tracking Simplified
 
-University life offers a plethora of opportunities for students to build networks, discover new events, explore varied avenues, and enrich their knowledge beyond the classroom. Yet, an underlying challenge persists. Clubs and societies often grapple with efficiently consolidating their events onto a singular, accessible calendar for students. This inefficiency stems from a multitude of reasons — from architectural missteps, technical inadequacies, to inconsistent maintenance. As a consequence, students, already juggling demanding schedules, find themselves diving deep into myriad Instagram pages, sifting through numerous email lists, and laboriously entering event details into their personal calendars. This fragmented approach is not just tedious but also riddled with potential errors. What if there was a simpler and easier way to put events on your calendar?
+Organizational, educational and personal life offers a plethora of opportunities for students to build networks, discover new events, explore varied avenues, and enrich their knowledge beyond the classroom. Yet, an underlying challenge persists. Clubs and societies often grapple with efficiently consolidating their events onto a singular, accessible calendar for members. This inefficiency stems from a multitude of reasons — from architectural missteps, technical inadequacies, to inconsistent maintenance. As a consequence, students, already juggling demanding schedules, find themselves diving deep into myriad Instagram pages, sifting through numerous email lists, and laboriously entering event details into their personal calendars. This fragmented approach is not just tedious but also riddled with potential errors. What if there was a simpler and easier way to put events on your calendar?
 
 ## Table of Contents
 
@@ -52,6 +52,6 @@ Snapcal aims to revolutionize this fragmented landscape. Imagine a scenario wher
 
 ## Team
 
-- **Rafi Khan**: Back-End Developer & Integrations Specialist
+- **Rafi Khan**: Image Processing, Back-End
 - **Mumtahin Farabi**: UI/UX Designer & Front-End Developer
   
