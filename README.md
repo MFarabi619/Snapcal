@@ -1,4 +1,5 @@
 # Snapcal: Event Tracking Simplified
+![image](https://github.com/MFarabi619/Snapcal/assets/54924158/b3e581b9-5835-4016-8123-3584da4093a9)
 
 Organizational, educational and personal life offers a plethora of opportunities for students to build networks, discover new events, explore varied avenues, and enrich their knowledge beyond the classroom. Yet, an underlying challenge persists. Clubs and societies often grapple with efficiently consolidating their events onto a singular, accessible calendar for members. This inefficiency stems from a multitude of reasons — from architectural missteps, technical inadequacies, to inconsistent maintenance. As a consequence, students, already juggling demanding schedules, find themselves diving deep into myriad Instagram pages, sifting through numerous email lists, and laboriously entering event details into their personal calendars. This fragmented approach is not just tedious but also riddled with potential errors. What if there was a simpler and easier way to put events on your calendar?
 
